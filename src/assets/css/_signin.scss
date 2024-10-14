@@ -1,0 +1,65 @@
+.form-signin {
+  width: 330px;
+  margin: auto;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: auto;
+
+   @media(max-width: 767px){
+    width: auto;
+    margin: 0px 15px;
+   }
+
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+  text-align: left;
+}
+
+.form-signin .checkbox input{
+margin-top: -3px;vertical-align: middle;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active,
+.form-floating>.form-control:-webkit-autofill{
+padding: 0px 0.75rem!important;
+-webkit-tap-highlight-color:transparent;-moz-tap-highlight-color:transparent;-o-tap-highlight-color:transparent;tap-highlight-color:transparent;
+-webkit-box-shadow: 0 0 0 30px #fff inset !important;font-size: inherit;
+} 
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin .form-control{
+  height: 53px;
+  line-height: normal;
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: #ced4da !important;
+  margin: 0;
+  transition: none !important;
+}
+.form-signin .form-control::-webkit-input-placeholder{color: #526470;font-weight: 400;}
+
+.form-signin .error-msg{color: #f00;font-weight: 500;padding-top: 10px;}
+
+.form-signin .register a{color: #0a58ca !important;text-decoration: underline !important;cursor: pointer;}

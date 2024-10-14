@@ -1,0 +1,283 @@
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+#root {
+  display: block;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 90px 0 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    display: block;
+    padding: 68px .75rem 0px;
+    box-shadow: none;
+    position: relative;
+    background: #fff !important;
+
+    .flex-column{
+      flex-direction: row !important;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-item {
+  font-weight: 500;
+  color: #333;
+  padding: .5rem 14px;
+  font-size: 14px;
+
+  @media (max-width: 767px) {
+    height: max-content;
+    padding: 0px 5px;
+
+  }
+
+
+  }
+
+
+
+
+
+
+.sidebar .nav-item .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-item.active {
+  background: #2470dc;
+  color: #fff !important;
+  cursor: pointer;
+
+  @media(max-width: 767px){
+    background: transparent;
+    color: #2470dc !important;
+  }
+
+}
+
+.sidebar .nav-item:hover .feather,
+.sidebar .nav-item.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+.sidebar .dropdown:hover .dropdown-menu{
+  display: block;
+}
+
+.sidebar .dropdown-menu {
+  padding: 0;
+  font-size: 14px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  min-width: 86%;
+  margin: auto;
+  top: 30px;
+
+  @media(max-width: 767px){
+    position: relative;
+    top: 6px;
+    width: auto;
+    margin: 0;
+    min-width: calc(100% - 30px);
+  }
+
+  .nav-item{
+    padding: 0.4rem 10px;
+  }
+
+  a {
+    padding: 5px 10px;
+    margin: 0;
+
+  }
+
+}
+
+.sidebar .dropdown-toggle::after {
+  vertical-align: middle;
+}
+
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 11px;
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+
+  @media(max-width: 767px){
+    padding: 0.6rem 10px;
+    font-size: 14px;
+  }
+
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+
+/* Inner-details */
+.inner-details {
+
+  .col-3 {
+    flex: 20%;
+
+      @media(max-width: 767px){
+          flex: 100%;
+          margin: 8px 12px !important;
+          padding: 15px 12px !important;
+      }
+
+  }
+
+  figure {
+    width: 70%;
+
+    img {
+      height: 175px;
+      margin: auto;
+
+      @media (max-width: 767px) {
+        height: 150px;
+      }
+
+    }
+
+  }
+
+  .card-body{
+    position: relative;
+    height: 500px;
+
+    @media (max-width: 767px) {
+      height: auto;
+      font-size: 13px;
+    }
+
+  }
+
+  .card-title{
+    min-height: 50px;
+    height: auto;
+
+    @media (max-width: 767px) {
+      min-height: inherit;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .card-link {
+    color: #0d6efd;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .price{
+    display: block;
+    font-size: 21px;
+    font-weight: bold;
+
+    @media (max-width: 767px) {
+      font-size: 18px;
+    }
+
+  }
+
+  .cart-buttons{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    gap: 7px;
+
+    @media (max-width: 767px) {
+      position: relative;
+      margin-top: 14px;
+      gap: 14px;
+    }
+
+
+    .add-cart-btn{
+      font-size: 14px;
+      font-weight: 500;
+      padding: 5px;
+      margin: 0;
+      line-height: 28px;
+      outline: none !important;
+      box-shadow: none !important;
+      border: 0px;
+      width: 100%;
+   }
+
+   .view-cart{
+    color: #000;
+   }
+
+  }
+
+
+
+}
