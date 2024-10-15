@@ -382,9 +382,15 @@ em.ruppee-icon{
     font-weight: 600 !important;
 }
 
+.loader{
+    min-height: calc(100vh - 53px);
+}
+
 .loader .inner-load{
     height: calc(100vh - 53px);
 }
+
+
 
 //profile-page-css:
 .profileModalClass strong{

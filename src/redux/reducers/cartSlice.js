@@ -1,9 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { current } from "@reduxjs/toolkit";
 
-// import { createAction } from "@reduxjs/toolkit";
-
-
 export const cartSlice = createSlice({
     name: 'cart',
     initialState: {
@@ -59,7 +56,6 @@ export const cartSlice = createSlice({
                     }
                 })
             }
-
          },
 
         //Delete particular item onClick delete icon:
@@ -75,10 +71,10 @@ export const cartSlice = createSlice({
             state.totalPrice = 0;
         },
 
-        //show deafult cart page
-        // setShowCart(state) {
-        //     state.showCart = !state.showCart;
-        // },
+        // show deafult cart page
+        setShowCart(state) {
+            state.showCart = !state.showCart;
+        },
 
         //checkout page default items
         addCheckoutItems(state , action) {

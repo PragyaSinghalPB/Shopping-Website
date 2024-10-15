@@ -73,9 +73,9 @@ function LoginForm() {
               <input type="checkbox" value="remember-me" /> Remember me
             </label>
           </div>
-          <div className="register">
+          {/* <div className="register">
             <a onClick={()=>{navigate('/register')}} >Register</a>
-          </div>
+          </div> */}
         </div>
 
         <button className="w-100 btn btn-lg btn-primary" type='submit' onClick={SubmitLogin}>Sign Up </button>

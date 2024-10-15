@@ -118,28 +118,6 @@ export default function Cart() {
 
   const modalRef = useRef();
 
-  useEffect(() => {
-
-    //for removing scroll on modal open
-    document.body.style.overflowY = 'hidden';
-
-    //on window click modal close add eventListener
-    document.addEventListener("mousedown", (e) => handleModalClose(e), true);
-
-    return () => {
-        document.body.style.overflowY = 'scroll';
-    };
-
-}, []);
-
-
-  //on window click modal close
-  const handleModalClose = (e) => {
-      if (modalRef.current && !modalRef.current.contains(e.target)) {
-          closeModal();
-      }
-  }
-
   //Calculate total amount of all products that mentioned in proceed-to-buy modal:
   const[subTotalAmt, setsubTotalAmt] = useState(0);
 

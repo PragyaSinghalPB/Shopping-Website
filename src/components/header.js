@@ -12,8 +12,8 @@ function Header(props) {
 
     const navigate = useNavigate();
 
-    const quantity = useSelector(state => state.cart.totalQuantity);
-
+    const quantity = useSelector(state => state.cart.productArray.length);
+    
     //Search items by title
     const searchItems = (e) => {
         let value = e.target.value;
