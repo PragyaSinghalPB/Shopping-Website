@@ -28,16 +28,6 @@ function Dataproduct(props) {
         setIsModalOpen(false);
     }
 
-  //Quantity increase/decrease quantity on click +/-: 
-//   const addProductQuantity = (product) => {
-//     dispatch(cartActions.addToCart({ product }))
-//   };
-
-//   const removeProductQuantity = (id) => {
-//     dispatch(cartActions.removeFromCart(id))
-//   };
-
-
     //Add products in cart page using useContext:
 
     // const {setCart} = useContext(NoteContext);

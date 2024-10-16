@@ -16,6 +16,7 @@ function Dashboard() {
     const [products, setProducts] = useState([]);
     const [productData, setProductData] = useState([]);
     const [isLoading, setIsLoading] = useState(true); // Initially set loading to true
+    const [dataNotFound, setDataNotFound] = useState(false); // Flag for no data
 
     useEffect(() => { //fetch data from api
         fetchStats();
@@ -51,12 +52,19 @@ function Dashboard() {
 
     //Search products by title name
     const searchProductsByTitle = (value) => {
-        const searchItems = productData.filter(item => item.title.toLowerCase().includes(value.toLowerCase()))
+        const searchItems = productData.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
         setProducts(searchItems);
+
+        // no products are availabel at the time of search
+        if(searchItems.length === 0){
+            setDataNotFound(true); // No products found
+        }
+        else{
+            setDataNotFound(false); // Products found
+        }
+
     }
-
-    // const cartItems = useSelector((state) => state.cart.productArray); //show cart items
-
+    
     return (
         <>
             {/* header */}
@@ -78,6 +86,7 @@ function Dashboard() {
                                 <main className="col-md-9 ms-sm-auto col-lg-10 p-md-4 mt-5">
                                     <div class="inner-details d-flex flex-wrap justify-content-center mt-3">
                                         <h2 className='mb-2'><b>Products List</b></h2>
+                                        
                                         <div className='row'>
                                             {
                                                 products.map(item => ( //products from state
@@ -93,6 +102,11 @@ function Dashboard() {
                                                     </div>
                                                 ))}
                                         </div>
+
+                                        {/* Display 'No product found' if no products available */}
+                                        {dataNotFound && (
+                                            <p className='d-block w-100 text-center pt-5 mt-5'>No product found</p>
+                                        )}
                                     </div>
                                 </main>
                             </div>
