@@ -55,7 +55,7 @@
   padding: .5rem 14px;
   font-size: 14px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     height: max-content;
     padding: 0px 5px;
 
@@ -79,7 +79,7 @@
   color: #fff !important;
   cursor: pointer;
 
-  @media(max-width: 767px){
+  @media(max-width: 1024px){
     background: transparent;
     color: #2470dc !important;
   }
@@ -111,7 +111,7 @@
   margin: auto;
   top: 30px;
 
-  @media(max-width: 767px){
+  @media(max-width: 1024px){
     position: relative;
     top: 6px;
     width: auto;
@@ -158,7 +158,7 @@
   border-width: 0;
   border-radius: 0;
 
-  @media(max-width: 767px){
+  @media(max-width: 1024px){
     padding: 0.6rem 10px;
     font-size: 14px;
   }
@@ -181,10 +181,13 @@
 .inner-details {
 
   .col-3 {
-    flex: 20%;
-    
-      @media(max-width: 767px){
+    // flex: 20%;
+    flex: inherit;
+    width: 23%;
+
+      @media(max-width: 1024px){
           flex: 100%;
+          width: 100%;
           margin: 8px 12px !important;
           padding: 15px 12px !important;
       }
@@ -198,7 +201,7 @@
       height: 175px;
       margin: auto;
 
-      @media (max-width: 767px) {
+      @media (max-width: 1024px) {
         height: 150px;
       }
 
@@ -210,7 +213,7 @@
     position: relative;
     height: 500px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       height: auto;
       font-size: 13px;
     }
@@ -221,7 +224,7 @@
     min-height: 50px;
     height: auto;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       min-height: inherit;
       font-size: 14px;
       margin-bottom: 5px;
@@ -239,7 +242,7 @@
     font-size: 21px;
     font-weight: bold;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       font-size: 18px;
     }
 
@@ -253,7 +256,7 @@
     margin: 0;
     gap: 7px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       position: relative;
       margin-top: 14px;
       gap: 14px;
