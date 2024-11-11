@@ -53,11 +53,6 @@ export default function Cart() {
 
   const columns = [
 
-    // {
-    //   name: 'Id',
-    //   selector: row => row.id,
-    // },
-
     {
       name: 'Item',
       selector: row => <p className='py-2 m-0'><img src={row.img} alt={row.alt} width={50} height={50} /></p>

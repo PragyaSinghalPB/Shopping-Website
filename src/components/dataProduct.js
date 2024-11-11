@@ -1,14 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductModal from '../modals/productModal';
 // import NoteContext from '../context/noteContext';
 // import { useNavigate } from 'react-router-dom';
 import { useDispatch} from 'react-redux';
 import { cartActions } from '../redux/reducers/cartSlice';
+import { useNavigate } from 'react-router-dom'; 
 
 function Dataproduct(props) {
-
-    // const navigate = useNavigate();
 
     //product description with read-more 
     const truncatedDescription = props.description.length > 150 ? //variable define with condition
@@ -41,14 +40,28 @@ function Dataproduct(props) {
     //     }     
 
     //Add products in cart page using Redux:
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [activeCart, setActiveCart] = useState(false);
+    const [viewCart, setViewCart] = useState(false);
+
+    // On Component Mount: Check if "View Cart" should be visible
+    //   useEffect(() => {
+    //     const cartState = localStorage.getItem('viewCart');
+    //     if (cartState === 'true') {
+    //         setViewCart(true);
+    //     }
+    // }, []);
 
     //On Click Add-to-cart button: 
     const addToCart = (product) => {
         dispatch(cartActions.addToCart({product}));    
         setActiveCart(true);
+        setViewCart(true);
+        // Save the cart state in local storage
+        // localStorage.setItem('viewCart', 'true');
     }
+
 
     return (
         <>
@@ -81,7 +94,7 @@ function Dataproduct(props) {
                     </div>
                     <div className='d-flex cart-buttons'>
                         <button className = {activeCart ? 'add-cart-btn btn btn-success' : 'add-cart-btn btn btn-primary'} onClick={() => addToCart(props)} >Add to cart</button>
-                        <button className='add-cart-btn view-cart btn btn-warning' onClick={openModal}>View Item</button>
+                        <button className={viewCart ? 'add-cart-btn view-cart btn btn-warning' : 'd-none'} onClick={() => navigate('/cart')}>View Cart</button>
                     </div>
                 </div>
             </div> 

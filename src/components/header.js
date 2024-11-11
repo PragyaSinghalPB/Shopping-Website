@@ -27,7 +27,6 @@ function Header(props) {
 
     //For particular path 
     const [isParticularLocation, setIsParticularLocation] = useState(false);
-
     const location = useLocation();
 
     useEffect(() => {

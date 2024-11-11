@@ -7,7 +7,6 @@ import Sidebar from './sidebar';
 import fetchData from '../service';
 import Dataproduct from './dataProduct';
 import Footer from './footer';
-// import { useSelector } from 'react-redux';
 
 import loader from '../assets/images/loader.gif';
 
