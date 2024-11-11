@@ -53,10 +53,10 @@ export default function Cart() {
 
   const columns = [
 
-    {
-      name: 'Id',
-      selector: row => row.id,
-    },
+    // {
+    //   name: 'Id',
+    //   selector: row => row.id,
+    // },
 
     {
       name: 'Item',
