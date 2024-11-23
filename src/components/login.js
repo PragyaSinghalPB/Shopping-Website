@@ -54,10 +54,10 @@ function LoginForm() {
         <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div className="form-floating">
-          <input type="email" value={user.email} className="form-control" id="floatingInput" placeholder="Email Id" onChange={onChangeEmail} />
+          <input type="email" value={'pragya@gmail.com'} className="form-control" id="floatingInput" placeholder="Email Id" onChange={onChangeEmail} />
         </div>
         <div className="form-floating">
-          <input type="password" value={user.password} className="form-control" id="floatingPassword" onChange={onChangePassword} placeholder="Password" />
+          <input type="password" value={'test@1234'} className="form-control" id="floatingPassword" onChange={onChangePassword} placeholder="Password" />
         </div>
 
         <div className='d-flex'>
