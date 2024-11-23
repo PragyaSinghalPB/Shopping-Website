@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const loginDetails = [
   {
-    email: 'pragya@gmail.com',
+    email: 'abc@gmail.com',
     password: 'test@1234'
   }
 ];
@@ -16,7 +16,10 @@ function LoginForm() {
   const navigate = useNavigate();
 
   const [invalid, setInvalid] = useState(false);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    email: 'abc@gmail.com',
+    password: 'test@1234'
+  });
 
   const onChangeEmail = (e) => {
     const value = e.target.value;
@@ -54,10 +57,10 @@ function LoginForm() {
         <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div className="form-floating">
-          <input type="email" value={'pragya@gmail.com'} className="form-control" id="floatingInput" placeholder="Email Id" onChange={onChangeEmail} />
+          <input type="email" value={user.email} onChange={onChangeEmail} className="form-control" id="floatingInput" placeholder="Email Id" />
         </div>
         <div className="form-floating">
-          <input type="password" value={'test@1234'} className="form-control" id="floatingPassword" onChange={onChangePassword} placeholder="Password" />
+          <input type="password" value={user.password} onChange={onChangePassword} className="form-control" id="floatingPassword" placeholder="Password" />
         </div>
 
         <div className='d-flex'>
@@ -72,7 +75,7 @@ function LoginForm() {
         </div>
 
         {invalid ?
-          <p className='error-msg'>Invalid User</p>
+          <><p className='error-msg'>Invalid User</p><br /></>
           :
           <></>
         }
