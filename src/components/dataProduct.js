@@ -2,17 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import ProductModal from '../modals/productModal';
 // import NoteContext from '../context/noteContext';
-// import { useNavigate } from 'react-router-dom';
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../redux/reducers/cartSlice';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 function Dataproduct(props) {
 
     //product description with read-more 
     const truncatedDescription = props.description.length > 150 ? //variable define with condition
         `${props.description.slice(0, 150)}` : props.description;
-
 
     //add modal for read-more content
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,23 +43,21 @@ function Dataproduct(props) {
     const [activeCart, setActiveCart] = useState(false);
     const [viewCart, setViewCart] = useState(false);
 
-    // On Component Mount: Check if "View Cart" should be visible
-    //   useEffect(() => {
-    //     const cartState = localStorage.getItem('viewCart');
-    //     if (cartState === 'true') {
-    //         setViewCart(true);
-    //     }
-    // }, []);
+    //show viewcart-btn on page-load
+    const cartItems = useSelector((state) => state.cart.productArray);
+
+    useEffect(() => { //useeffect at the time of data show on page reloading and clear at the time of cookies clear
+        const viewCartItem = cartItems.find(item => item.id === props.id); //find method used to find an object
+        setViewCart(viewCartItem?.id === props.id);
+        setActiveCart(viewCartItem?.id === props.id);
+    }, []);
 
     //On Click Add-to-cart button: 
     const addToCart = (product) => {
-        dispatch(cartActions.addToCart({product}));    
+        dispatch(cartActions.addToCart({ product }));
         setActiveCart(true);
         setViewCart(true);
-        // Save the cart state in local storage
-        // localStorage.setItem('viewCart', 'true');
     }
-
 
     return (
         <>
@@ -93,11 +89,11 @@ function Dataproduct(props) {
 
                     </div>
                     <div className='d-flex cart-buttons'>
-                        <button className = {activeCart ? 'add-cart-btn btn btn-success' : 'add-cart-btn btn btn-primary'} onClick={() => addToCart(props)} >Add to cart</button>
+                        <button className={activeCart ? 'add-cart-btn btn btn-success' : 'add-cart-btn btn btn-primary'} onClick={() => addToCart(props)} >Add to cart</button>
                         <button className={viewCart ? 'add-cart-btn view-cart btn btn-warning' : 'd-none'} onClick={() => navigate('/cart')}>View Cart</button>
                     </div>
                 </div>
-            </div> 
+            </div>
         </>
     )
 }
