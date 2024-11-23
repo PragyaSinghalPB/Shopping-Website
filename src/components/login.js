@@ -6,12 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const loginDetails = [
   {
-    id: 1,
-    email: 'abc@gmail.com',
-    password: '1234'
-  },
-  {
-    id: 2,
     email: 'pragya@gmail.com',
     password: 'test@1234'
   }
@@ -37,7 +31,6 @@ function LoginForm() {
   const SubmitLogin = (e) => {
 
     e.preventDefault(); //not reload/refresh the page
-
     const validUser = loginDetails.filter(item => {
       if (item.email === user.email && item.password === user.password) {
         return item;
@@ -61,10 +54,10 @@ function LoginForm() {
         <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div className="form-floating">
-          <input type="email" defaultValue={"abc@gmail.com"} className="form-control" id="floatingInput" placeholder="Email Id" onChange={onChangeEmail} />
+          <input type="email" value={user.email} className="form-control" id="floatingInput" placeholder="Email Id" onChange={onChangeEmail} />
         </div>
         <div className="form-floating">
-          <input type="password" defaultValue={"1234"} className="form-control" id="floatingPassword" onChange={onChangePassword} placeholder="Password" />
+          <input type="password" value={user.password} className="form-control" id="floatingPassword" onChange={onChangePassword} placeholder="Password" />
         </div>
 
         <div className='d-flex'>
@@ -78,13 +71,13 @@ function LoginForm() {
           </div> */}
         </div>
 
-        <button className="w-100 btn btn-lg btn-primary" type='submit' onClick={SubmitLogin}>Sign Up </button>
         {invalid ?
           <p className='error-msg'>Invalid User</p>
           :
           <></>
         }
 
+        <button className="w-100 btn btn-lg btn-primary" type='submit' onClick={SubmitLogin}>Sign Up </button>
       </form>
     </div>
   );
