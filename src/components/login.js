@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 const loginDetails = [
   {
     id: 1,
-    email: 'pragya@gmail.com',
-    password: 'test@1234'
+    email: 'abc@gmail.com',
+    password: '1234'
   },
   {
     id: 2,
-    email: 'aman@gmail.com',
-    password: '1234'
+    email: 'pragya@gmail.com',
+    password: 'test@1234'
   }
 ];
 
@@ -61,10 +61,10 @@ function LoginForm() {
         <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div className="form-floating">
-          <input type="email" className="form-control" id="floatingInput" placeholder="Email Id" onChange={onChangeEmail} />
+          <input type="email" defaultValue={"abc@gmail.com"} className="form-control" id="floatingInput" placeholder="Email Id" onChange={onChangeEmail} />
         </div>
         <div className="form-floating">
-          <input type="password" className="form-control" id="floatingPassword" onChange={onChangePassword} placeholder="Password" />
+          <input type="password" defaultValue={"1234"} className="form-control" id="floatingPassword" onChange={onChangePassword} placeholder="Password" />
         </div>
 
         <div className='d-flex'>
